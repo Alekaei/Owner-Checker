@@ -1,101 +1,83 @@
-﻿using SDPlugins;
-using Rocket.API;
-using Rocket.Unturned;
-using Rocket.Unturned.Chat;
+﻿using Rocket.API.Commands;
+using Rocket.API.User;
+using Rocket.Core.User;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
 using Steamworks;
+using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace SDPlugins
 {
-    public class CheckOwner : IRocketCommand
-    {
-        RaycastHit hit;
-        public AllowedCaller AllowedCaller
-        {
-            get { return AllowedCaller.Player; }
-        }
+	public class CheckOwner : ICommand
+	{
+		public string Name => "checkowner";
 
-        public string Name
-        {
-            get { return "checkowner"; }
-        }
+		public string [] Aliases => new string [0];
 
-        public string Help
-        {
-            get { return "Check the owner of a certain object"; }
-        }
+		public string Summary => "Check the owner of a certain object.";
 
-        public string Syntax
-        {
-            get { return "/checkowner"; }
-        }
+		public string Description => throw new NotImplementedException ();
 
-        public List<string> Aliases
-        {
-            get { return new List<string>(); }
-        }
-        public void Execute(IRocketPlayer caller, string[] command)
-        {
-            UnturnedPlayer player = (UnturnedPlayer)caller;
-            if (Physics.Raycast(player.Player.look.aim.position, player.Player.look.aim.forward, out hit, 10, RayMasks.BARRICADE_INTERACT))
-            {
-                byte x;
-                byte y;
+		public string Permission => "checkowner";
 
-                ushort plant;
-                ushort index;
+		public string Syntax => "";
 
-                BarricadeRegion r;
-                StructureRegion s;
+		public IChildCommand [] ChildCommands => throw new NotImplementedException ();
 
-                Transform transform = hit.transform;
-                InteractableVehicle vehicle = transform.gameObject.GetComponent<InteractableVehicle>();
+		public void Execute (ICommandContext context)
+		{
+			UnturnedPlayer player = (context.User as UnturnedUser)?.Player;
+			if (player == null)
+				return;
+			if (Physics.Raycast (player.NativePlayer.look.aim.position, player.NativePlayer.look.aim.forward, out RaycastHit hit, 10, RayMasks.BARRICADE_INTERACT))
+			{
+				byte x;
+				byte y;
 
-                if (transform.GetComponent<InteractableDoorHinge>() != null)
-                {
-                    transform = transform.parent.parent;
-                }
+				ushort plant;
+				ushort index;
 
-                if (BarricadeManager.tryGetInfo(transform, out x, out y, out plant, out index, out r))
-                {
+				BarricadeRegion r;
+				StructureRegion s;
 
-                    var bdata = r.barricades[index];
-                    
-                    Library.TellInfo(caller, (CSteamID)bdata.owner, (CSteamID)bdata.group);
-                }
+				Transform transform = hit.transform;
+				InteractableVehicle vehicle = transform.gameObject.GetComponent<InteractableVehicle> ();
 
-                else if (StructureManager.tryGetInfo(transform, out x, out y, out index, out s))
-                {
-                    var sdata = s.structures[index];
-                    
-                    Library.TellInfo(caller, (CSteamID)sdata.owner, (CSteamID)sdata.group);
-                }
+				if (transform.GetComponent<InteractableDoorHinge> () != null)
+				{
+					transform = transform.parent.parent;
+				}
 
-                else if (vehicle != null)
-                {
-                    if (vehicle.lockedOwner != CSteamID.Nil)
-                    { 
-                        Library.TellInfo(caller, vehicle.lockedOwner, vehicle.lockedGroup);
-                        return;
-                    }   
-                    UnturnedChat.Say(caller, "Vehicle does not have an owner.");
-                }
-            }
-        }
+				if (BarricadeManager.tryGetInfo (transform, out x, out y, out plant, out index, out r))
+				{
 
-        public List<string> Permissions
-        {
-            get
-            {
-                return new List<string>
-                {
-                  "SDPlugins.checkowner"
-                };
-            }
-        }
-    }
+					var bdata = r.barricades [index];
+
+					Library.TellInfo (context.User, (CSteamID) bdata.owner, (CSteamID) bdata.group);
+				}
+
+				else if (StructureManager.tryGetInfo (transform, out x, out y, out index, out s))
+				{
+					var sdata = s.structures [index];
+
+					Library.TellInfo (context.User, (CSteamID) sdata.owner, (CSteamID) sdata.group);
+				}
+
+				else if (vehicle != null)
+				{
+					if (vehicle.lockedOwner != CSteamID.Nil)
+					{
+						Library.TellInfo (context.User, vehicle.lockedOwner, vehicle.lockedGroup);
+						return;
+					}
+					context.User.SendMessage ("Vehicle does not have an owner.");
+				}
+			}
+		}
+
+		public bool SupportsUser (Type user) => true;
+	}
 }

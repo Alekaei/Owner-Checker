@@ -1,0 +1,25 @@
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\SDPlugins_Owner Checker.dll.config
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\SDPlugins_Owner Checker.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\SDPlugins_Owner Checker.pdb
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Assembly-CSharp.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\PlayerInfoLib.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\RestSharp.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.API.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.Compatibility.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.Core.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.UnityEngine.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.Unturned.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\System.Runtime.Serialization.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\UnityEngine.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.API.xml
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Debug\Rocket.Core.xml
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Debug\OwnerChecker.csprojResolveAssemblyReference.cache
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Debug\OwnerChecker.csproj.CoreCompileInputs.cache
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Debug\SDPlugins_Owner Checker.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Debug\SDPlugins_Owner Checker.pdb

@@ -4,3 +4,28 @@ C:\Users\Karl Rehm\Documents\Visual Studio 2017\Projects\SDPlugins\Owner Checker
 C:\Users\Karl Rehm\Documents\Visual Studio 2017\Projects\SDPlugins\Owner Checker\obj\Release\OwnerChecker.csprojResolveAssemblyReference.cache
 C:\Users\Karl Rehm\Documents\Visual Studio 2017\Projects\SDPlugins\Owner Checker\obj\Release\SDPlugins_Owner Checker.dll
 C:\Users\Karl Rehm\Documents\Visual Studio 2017\Projects\SDPlugins\Owner Checker\obj\Release\SDPlugins_Owner Checker.pdb
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\SDPlugins_Owner Checker.dll.config
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\SDPlugins_Owner Checker.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\SDPlugins_Owner Checker.pdb
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Assembly-CSharp-firstpass.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Assembly-CSharp.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Microsoft.Practices.Unity.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Newtonsoft.Json.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\PlayerInfoLib.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\RestSharp.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.API.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.Compatibility.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.Core.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.UnityEngine.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.Unturned.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\System.Runtime.Serialization.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\UnityEngine.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.API.xml
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\bin\Release\Rocket.Core.xml
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Release\OwnerChecker.csprojResolveAssemblyReference.cache
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Release\OwnerChecker.csproj.CoreCompileInputs.cache
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Release\SDPlugins_Owner Checker.dll
+C:\Users\Aleksei\Documents\Programming\Clones\Owner-Checker\obj\Release\SDPlugins_Owner Checker.pdb

@@ -7,34 +7,12 @@ using System.Xml.Serialization;
 
 namespace SDPlugins
 {
-    public class OwnerCheckConfig : IRocketPluginConfiguration
+    public class OwnerCheckConfig
     {
-        [XmlElement("usePlayerInfoLib")]
-        public bool usePlayerInfoLib;
-
-        [XmlElement("SayPlayerID")]
-        public bool SayPlayerID;
-
-        [XmlElement("SayPlayerCharacterName")]
-        public bool SayPlayerCharacterName;
-
-        [XmlElement("SayPlayerSteamName")]
-        public bool SayPlayerSteamName;
-
-        [XmlElement("SayGroupID")]
-        public bool SayGroupID;
-
-        [XmlElement("SayGroupName")]
-        public bool SayGroupName;
-
-        public void LoadDefaults()
-        {
-            usePlayerInfoLib = false;
-            SayPlayerID = true;
-            SayPlayerCharacterName = true;
-            SayPlayerSteamName = true;
-            SayGroupID = true;
-            SayGroupName = true;
-        }
+		public bool SayPlayerID { get; set; } = true;
+		public bool SayPlayerCharacterName { get; set; } = true;
+		public bool SayPlayerSteamName { get; set; } = true;
+		public bool SayGroupID { get; set; } = true;
+		public bool SayGroupName { get; set; } = true;
     }
 }

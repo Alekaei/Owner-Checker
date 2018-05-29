@@ -1,32 +1,28 @@
 ﻿using Rocket.Core.Plugins;
-using SDG.Unturned;
-using SDPlugins;
-using Steamworks;
-using static Rocket.Unturned.Events.UnturnedPlayerEvents;
-using Rocket.Unturned;
+using Rocket.API.DependencyInjection;
+using Rocket.Core.Logging;
+using Rocket.API.Player;
 
 namespace SDPlugins
 {
-    public class Init : RocketPlugin<OwnerCheckConfig>
+    public class Init : Plugin<OwnerCheckConfig>
     {
-        public static Init Instance;
+		private IPlayerManager playerManager;
 
-        protected override void Load()
+		protected Init (IDependencyContainer container, IPlayerManager playerManager) : base ("Owner Checker", container)
+		{
+			this.playerManager = playerManager;
+		}
+
+		protected override void OnLoad(bool isFromReload)
         {
-            Instance = this;
-            Rocket.Core.Logging.Logger.LogWarning("[SDPlugins] Owner check loaded!");
-            if (Configuration.Instance.usePlayerInfoLib)
-            {
-                Rocket.Core.Logging.Logger.LogWarning("[SDPlugins] Player Info Lib will be used!");
-            }
-            else
-            {
-                Rocket.Core.Logging.Logger.LogWarning("[SDPlugins] Player Info Lib will not be used!");
-            }
+			Library.Init (playerManager);
+            Logger.LogWarning("[SDPlugins] Owner check loaded!");
         }
-        protected override void Unload()
-        {
-            Rocket.Core.Logging.Logger.Log("[SDPlugins] Owner Check unloaded!");
-        }
-    }
+
+		protected override void OnUnload ()
+		{
+			Logger.LogWarning ("[SDPlugins] Owner check unloaded!");
+		}
+	}
 }
