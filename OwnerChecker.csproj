@@ -31,9 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Init.cs" />
+    <Compile Include="OwnerCheckerPlugin.cs" />
     <Compile Include="CheckOwnerCommand.cs" />
-    <Compile Include="Libary.cs" />
+    <Compile Include="Library.cs" />
     <Compile Include="OwnerCheckConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

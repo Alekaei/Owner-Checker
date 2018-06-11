@@ -1,12 +1,9 @@
 ﻿using Rocket.API.Commands;
-using Rocket.API.User;
 using Rocket.Core.User;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
 using Steamworks;
 using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace SDPlugins
@@ -15,17 +12,17 @@ namespace SDPlugins
 	{
 		public string Name => "checkowner";
 
-		public string [] Aliases => new string [0];
+	    public string[] Aliases => null;
 
 		public string Summary => "Check the owner of a certain object.";
 
-		public string Description => throw new NotImplementedException ();
+		public string Description => null;
 
 		public string Permission => "checkowner";
 
 		public string Syntax => "";
 
-		public IChildCommand [] ChildCommands => throw new NotImplementedException ();
+	    public IChildCommand[] ChildCommands => null;
 
 		public void Execute (ICommandContext context)
 		{
@@ -34,16 +31,7 @@ namespace SDPlugins
 				return;
 			if (Physics.Raycast (player.NativePlayer.look.aim.position, player.NativePlayer.look.aim.forward, out RaycastHit hit, 10, RayMasks.BARRICADE_INTERACT))
 			{
-				byte x;
-				byte y;
-
-				ushort plant;
-				ushort index;
-
-				BarricadeRegion r;
-				StructureRegion s;
-
-				Transform transform = hit.transform;
+			    Transform transform = hit.transform;
 				InteractableVehicle vehicle = transform.gameObject.GetComponent<InteractableVehicle> ();
 
 				if (transform.GetComponent<InteractableDoorHinge> () != null)
@@ -51,7 +39,7 @@ namespace SDPlugins
 					transform = transform.parent.parent;
 				}
 
-				if (BarricadeManager.tryGetInfo (transform, out x, out y, out plant, out index, out r))
+				if (BarricadeManager.tryGetInfo (transform, out _, out _, out _, out var index, out var r))
 				{
 
 					var bdata = r.barricades [index];
@@ -59,7 +47,7 @@ namespace SDPlugins
 					Library.TellInfo (context.User, (CSteamID) bdata.owner, (CSteamID) bdata.group);
 				}
 
-				else if (StructureManager.tryGetInfo (transform, out x, out y, out index, out s))
+				else if (StructureManager.tryGetInfo (transform, out _, out _, out index, out var s))
 				{
 					var sdata = s.structures [index];
 
