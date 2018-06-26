@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net35</TargetFrameworks>
     <AssemblyName>OwnerChecker</AssemblyName>
-    <RootNamespace>OwnerChecker</RootNamespace>
+    <RootNamespace>SDPlugins.OwnerChecker</RootNamespace>
     <OutputType>Library</OutputType>
   </PropertyGroup> 
   <PropertyGroup>
