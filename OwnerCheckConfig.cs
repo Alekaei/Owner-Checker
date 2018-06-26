@@ -1,4 +1,4 @@
-﻿namespace SDPlugins
+﻿namespace SDPlugins.OwnerChecker
 {
     public class OwnerCheckConfig
     {

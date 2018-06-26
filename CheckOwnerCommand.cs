@@ -4,12 +4,19 @@ using Rocket.Unturned.Player;
 using SDG.Unturned;
 using Steamworks;
 using System;
+using Rocket.API.Plugins;
 using UnityEngine;
 
-namespace SDPlugins
+namespace SDPlugins.OwnerChecker
 {
 	public class CheckOwner : ICommand
 	{
+	    private OwnerCheckerPlugin _plugin;
+
+	    public CheckOwner(IPlugin plugin)
+	    {
+	        _plugin = (OwnerCheckerPlugin) plugin;
+	    }
 		public string Name => "checkowner";
 
 	    public string[] Aliases => null;
@@ -44,21 +51,21 @@ namespace SDPlugins
 
 					var bdata = r.barricades [index];
 
-					Library.TellInfo (context.User, (CSteamID) bdata.owner, (CSteamID) bdata.group);
+				    _plugin.TellInfo (context.User, (CSteamID) bdata.owner, (CSteamID) bdata.group);
 				}
 
 				else if (StructureManager.tryGetInfo (transform, out _, out _, out index, out var s))
 				{
 					var sdata = s.structures [index];
 
-					Library.TellInfo (context.User, (CSteamID) sdata.owner, (CSteamID) sdata.group);
+				    _plugin.TellInfo (context.User, (CSteamID) sdata.owner, (CSteamID) sdata.group);
 				}
 
 				else if (vehicle != null)
 				{
 					if (vehicle.lockedOwner != CSteamID.Nil)
 					{
-						Library.TellInfo (context.User, vehicle.lockedOwner, vehicle.lockedGroup);
+					    _plugin.TellInfo (context.User, vehicle.lockedOwner, vehicle.lockedGroup);
 						return;
 					}
 					context.User.SendMessage ("Vehicle does not have an owner.");
